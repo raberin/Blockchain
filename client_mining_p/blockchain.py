@@ -167,7 +167,7 @@ def mine():
         return jsonify(response), 200
     else:
         response = {
-            'message': 'Failure'
+            'message': 'Failed mining the block'
         }
         return jsonify(response), 200
 
