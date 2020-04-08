@@ -70,8 +70,6 @@ if __name__ == '__main__':
 
         # TODO: Get the block from `data` and use it to look for a new proof
         new_proof = proof_of_work(data['last_block'])
-        print(data['last_block'])
-        print(new_proof)
 
         # When found, POST it to the server {"proof": new_proof, "id": id}
         post_data = {"proof": new_proof, "id": id}
