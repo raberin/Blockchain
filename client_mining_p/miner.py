@@ -6,8 +6,6 @@ import json
 
 from time import time
 
-coins = 0
-
 
 def proof_of_work(block):
     """
@@ -56,6 +54,8 @@ if __name__ == '__main__':
     print("ID is", id)
     f.close()
 
+    coins = 0
+
     # Run forever until interrupted
     while True:
         r = requests.get(url=node + "/last_block")
@@ -81,7 +81,7 @@ if __name__ == '__main__':
         # add 1 to the number of coins mined and print it.  Otherwise,
         # print the message from the server.
         if data['message'] == 'New Block Forged':
-            coins = coins + 1
-            print(coins)
+            coins += 1
+            print(f"You have mined {coins} coins")
         else:
             print(data['message'])

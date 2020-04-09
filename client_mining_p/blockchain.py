@@ -130,7 +130,7 @@ def mine():
         response = {
             'message': f"Missing proof or id"
         }
-        return jsonify(response), 404
+        return jsonify(response), 400
 
     # Validate the proof
     last_block_sorted = json.dumps(blockchain.last_block, sort_keys=True)
